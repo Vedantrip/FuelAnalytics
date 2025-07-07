@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .btn-lg {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-lg:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+        .card {
+            transition: transform 0.4s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-brand {
+            animation: pulseBrand 2s infinite ease-in-out;
+        }
+        @keyframes pulseBrand {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/logo.png" alt="Logo" width="30" height="30" class="me-2">
+        </a>
+        <div class="container">
+            <a class="navbar-brand" href="#">Fuel Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_log.html">Add Fuel Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trips.html">Trip Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="jumbotron text-center" data-aos="zoom-in">
+            <h1 class="display-4">Welcome to Fuel Consumption Tracker</h1>
+            <p class="lead">Track your vehicle's fuel efficiency and save money on gas</p>
+            <hr class="my-4">
+            <p>Get started by adding your first fuel log or trip record.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a class="btn btn-primary btn-lg" href="add_log.html" role="button">Add Fuel Log</a>
+                <a class="btn btn-success btn-lg" href="trips.html" role="button">Add Trip</a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Fuel Logs</h5>
+                        <div id="recentLogs" class="card-text">
+                            <p>Loading recent logs...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Trips</h5>
+                        <div id="recentTrips" class="card-text">
+                            <p>Loading recent trips...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Quick Stats</h5>
+                        <div id="quickStats" class="card-text">
+                            <p>Loading statistics...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5" data-aos="fade-up">
+        <p>Fuel Consumption Tracker &copy; 2023</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

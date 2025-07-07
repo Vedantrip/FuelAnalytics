@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Trip | Fuel Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fuel Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_log.html">Add Fuel Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="trips.html">Trip Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Add Trip Record</h1>
+        
+        <form id="tripForm" class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="tripVehicleId" class="form-label">Vehicle</label>
+                    <select class="form-select" id="tripVehicleId" required>
+                        <option value="" selected disabled>Select Vehicle</option>
+                        <option value="1">Car 1 (Toyota Camry)</option>
+                        <option value="2">Truck 1 (Ford F-150)</option>
+                        <option value="3">SUV 1 (Honda CR-V)</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a vehicle.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="tripDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="tripDate" required>
+                    <div class="invalid-feedback">
+                        Please select a date.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="startLocation" class="form-label">Start Location</label>
+                    <input type="text" class="form-control" id="startLocation" placeholder="Enter start location" required>
+                    <div class="invalid-feedback">
+                        Please enter a start location.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="endLocation" class="form-label">End Location</label>
+                    <input type="text" class="form-control" id="endLocation" placeholder="Enter end location" required>
+                    <div class="invalid-feedback">
+                        Please enter an end location.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="distance" class="form-label">Distance (km)</label>
+                    <input type="number" step="0.1" class="form-control" id="distance" placeholder="Enter distance traveled" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid distance.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="tripDuration" class="form-label">Duration (minutes)</label>
+                    <input type="number" class="form-control" id="tripDuration" placeholder="Enter trip duration">
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="tripPurpose" class="form-label">Trip Purpose</label>
+                <select class="form-select" id="tripPurpose">
+                    <option value="commute">Commute</option>
+                    <option value="business">Business</option>
+                    <option value="personal">Personal</option>
+                    <option value="vacation">Vacation</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="tripNotes" class="form-label">Notes</label>
+                <textarea class="form-control" id="tripNotes" rows="3" placeholder="Any additional notes about the trip..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Trip Record</button>
+            <button type="reset" class="btn btn-secondary ms-2">Reset Form</button>
+        </form>
+        
+        <div id="tripSuccessAlert" class="alert alert-success mt-3 d-none" role="alert">
+            Trip record added successfully!
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p>Fuel Consumption Tracker &copy; 2023</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

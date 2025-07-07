@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Fuel Log | Fuel Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fuel Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="add_log.html">Add Fuel Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trips.html">Trip Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">Analytics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Add Fuel Log</h1>
+        
+        <form id="fuelLogForm" class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="vehicleId" class="form-label">Vehicle</label>
+                    <select class="form-select" id="vehicleId" required>
+                        <option value="" selected disabled>Select Vehicle</option>
+                        <option value="1">Car 1 (Toyota Camry)</option>
+                        <option value="2">Truck 1 (Ford F-150)</option>
+                        <option value="3">SUV 1 (Honda CR-V)</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a vehicle.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="logDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="logDate" required>
+                    <div class="invalid-feedback">
+                        Please select a date.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="fuelAmount" class="form-label">Fuel Amount (liters)</label>
+                    <input type="number" step="0.01" class="form-control" id="fuelAmount" placeholder="Enter fuel amount" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid fuel amount.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="fuelCost" class="form-label">Fuel Cost</label>
+                    <input type="number" step="0.01" class="form-control" id="fuelCost" placeholder="Enter total cost">
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="odometer" class="form-label">Odometer Reading (km)</label>
+                    <input type="number" class="form-control" id="odometer" placeholder="Enter odometer reading" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid odometer reading.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="fuelType" class="form-label">Fuel Type</label>
+                    <select class="form-select" id="fuelType">
+                        <option value="regular">Regular</option>
+                        <option value="premium">Premium</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="notes" class="form-label">Notes</label>
+                <textarea class="form-control" id="notes" rows="3" placeholder="Any additional notes..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Fuel Log</button>
+            <button type="reset" class="btn btn-secondary ms-2">Reset Form</button>
+        </form>
+        
+        <div id="successAlert" class="alert alert-success mt-3 d-none" role="alert">
+            Fuel log added successfully!
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p>Fuel Consumption Tracker &copy; 2023</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
