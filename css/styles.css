@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+/* Form Styles */
+.form-control, .form-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 5px;
+}
+
+/* Chart Container */
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: auto;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-brand img:hover {
+    transform: rotate(-10deg) scale(1.1);
+  }
+
+.skeleton-loader {
+    padding: 1rem;
+}
+.skeleton-line {
+    height: 1rem;
+    background: #eee;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+.skeleton-loader .skeleton-line {
+    width: 100%;
+    }
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .jumbotron .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .jumbotron .d-flex {
+        flex-direction: column;
+    }
+}
